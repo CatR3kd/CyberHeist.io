@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
+body{
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  animation: bg-scrolling-reverse 0.92s infinite;
+  animation-timing-function: linear;
+  overflow: hidden;
+}
+
+*{
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+button:hover{
+  cursor: pointer;
+  background: #ffffff;
+}
+
+#container{
+  position: relative;
+}
+
+#menuShadow{
+  background-color: #00000080;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+	z-index: 100;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.menu{
+  border-radius: 8px;
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -ms-transform: translate(-50%, -35%);
+  transform: translate(-50%, -35%);
+  box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 24px;
+  padding: 10px 10px 20px 10px;
+  background: #ffffff;
+}
+
+#notice{
+  text-align: center;
+}
+
+#gameContainer{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -80%);
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+#stats, #upgrades{
+  margin: 10px;
+}
+
+.stats{
+  margin: 5px;
+}
+
+#click{
+  margin-top: 10px;
+  border-radius: 50%;
+  max-width: 120px;
+  max-height: 120px;
+  width: 20vw;
+  height: 20vw;
+  border: 8px solid #FFE878;
+  color: #FFE878;
+  background: #fff9d6;
+  font-size: 40px;
+  transition: .15s all;
+  font-family: 'Orbitron', sans-serif;
+}
+
+#click:hover{
+  transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#click:active{
+  transform: scale(1);
+  box-shadow: none;
+}
+
+#hideNotice{
+  margin-top: 15px;
+  padding: 10px 10px;
+  border: 1px solid #000000;
+  background: transparent;
+  border-radius: 9px;
+  transition: .2s all;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.upgrade{
+  margin-top: 15px;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  border-radius: 9px;
+  transition: .2s all;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.upgrade:hover{
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.upgrade:active{
+  box-shadow: none;
+}
+
+#menus{
+  position: absolute;
+	top: 5px;
+  right: 20px;
+  text-align: right;
+}
+
+.menubutton{
+  padding: 10px 15px 10px 15px;
+  border: 1px solid #000000;
+  background: transparent;
+  border-radius: 9px;
+  transition: .2s all;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 15px;
+}
+
+.menubutton:hover{
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.menubutton:active{
+  box-shadow: none;
+}
+
+#cryptoMenu, #hackMenu{
+  visibility: hidden;
+}
+
+/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+/* Animations */
+
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+
+#discordLink{
+  bottom: 10px;
+  right: 10px;
+  position: fixed;
+}
+
+#discordImg{
+  width: 35px;
+  height: 35px;
+}

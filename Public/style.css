@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
+body{
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  animation: bg-scrolling-reverse 0.92s infinite;
+  animation-timing-function: linear;
+  overflow: hidden;
+}
+
+*{
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+button:hover{
+  cursor: pointer;
+  background: #ffffff;
+}
+
+#container{
+  position: relative;
+}
+
+#menuShadow{
+  background-color: #00000080;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+	z-index: 100;
+  top: 0;
+  left: 0;
+}
+
+.menu{
+  border-radius: 8px;
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -ms-transform: translate(-50%, -35%);
+  transform: translate(-50%, -35%);
+  box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 24px;
+  padding: 10px 10px 20px 10px;
+  background: #ffffff;
+  max-height: 95%;
+}
+
+#hackMenu{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  min-width: 35%;
+  max-width: 50%;
+  min-height: 60%;
+  text-align: center;
+  overflow-y: scroll;
+}
+
+.closeMenuButton{
+  background: transparent;
+  top: 0;
+  right: 0;
+  border: none;
+  outline: none;
+  color: #ff5c5c;
+  position: absolute;
+  margin: 6px;
+  font-size: 20px;
+}
+
+.closeMenuButton:hover{
+  background: transparent;
+}
+
+#hackTerminal{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+#guide{
+  margin-top: -15px;
+  text-align: left;
+}
+
+#terminal{
+  resize: none;
+  text-shadow: 0 0 5px #C8C8C8;
+  background-color: #000000;
+  color: #4AF626;
+  font-size: 20px;
+}
+
+#terminal::placeholder {
+	text-shadow: 0 0 5px #C8C8C8;
+  font-size: 20px;
+}
+
+#hacked{
+  visibility: hidden;
+  width: 80vh;
+  top: calc(50% - 12.5vh);
+  text-align: center;
+  background-image: radial-gradient(
+    #ffffff, #ff0000 200%
+  );
+}
+
+#hacked h1{
+  font-size: 50px;
+  color: #ff5c5c;
+}
+
+#hacked h2{
+  font-size: 40px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+#hacked h3{
+  font-size: 30px;
+}
+
+#hacked p{
+  font-size: 24px;
+}
+
+#hackCode{
+  text-shadow: 0 0 5px #C8C8C8;
+  background-color: #000000;
+  color: #4AF626;
+  height: 25px;
+  border-radius: 5px;
+  outline: none;
+  text-align: center;
+  font-size: 20px;
+  width: 120px;
+}
+
+#submitHackCode{
+  font-family: 'Orbitron', sans-serif;
+  margin-top: 10px;
+  outline: none;
+  background: white;
+  padding: 3px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  color: #ff5c5c;
+  transition: .2s all;
+}
+
+#submitHackCode:hover{
+  transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#submitHackCode:active{
+  transform: scale(1);
+  box-shadow: none;
+}
+
+#suspended{
+  visibility: hidden;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  text-align: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-radius: 0px;
+  padding: none;
+  transform: none;
+}
+
+#suspended h1{
+  font-size: 75px;
+}
+
+#suspended h2{
+  font-size: 30px;
+}
+
+#loginContainer{
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+	overflow-y: auto;
+}
+
+
+#login, #signup, #market, #onlineOffers, #guide, #terminal{
+  width: calc(50% - 20px);
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+#login > h2, #signup > h2{
+  margin-bottom: 0;
+}
+
+#playSingleplayer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-top-right-radius: 8px;
+  box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 24px;
+  background: #ffffff;
+  padding: 0px 10px;
+}
+
+@media (max-width: 600px){
+	#login, #signup, #market, #onlineOffers, #guide, #terminal{
+		width: calc(100% - 20px);
+	}
+
+	#loginContainer button {
+/* 		Increase button size */
+		padding: 10px !important;
+		width: 100%;
+		
+	}
+
+	#loginContainer input {
+/* 		Increase button size */
+		padding: 15px !important;
+		width: 100%;
+	}
+/* 	it should not be at the right... at all */
+	#loginContainer{
+		height: calc(100vh - 30px);
+		width: calc(100vw - 20px);
+		position: fixed;
+		top: -20px;
+		left: 0px;
+		z-index: 1;
+		border-radius: 0px;
+		transform: translateY(20px);
+		flex-wrap: wrap;
+		overflow-y: auto;
+	}
+
+	.divider {
+		visibility: hidden;
+	}
+}
+
+@media (min-width: 599px){
+	#loginContainer{
+		min-width: 480px;
+	}
+}
+
+.userData{
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: 1px solid #000000;
+  height: 15px;
+  outline: none;
+}
+
+hr{
+  border-top: 1px solid #000000;
+}
+
+.divider{
+  width: 1px;
+  background: #000000;
+}
+
+.warning{
+  margin: 8px 2px 0 0;
+  color: #ff5c5c;
+}
+
+#loginButton, #signupButton, #chatButton{
+  background: transparent;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 3px 8px 3px 8px;
+}
+
+#gameContainer{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -80%);
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+#stats, #upgrades{
+  margin: 10px;
+}
+
+.stats{
+  margin: 5px;
+}
+
+#click{
+  margin-top: 10px;
+  border-radius: 50%;
+  max-width: 120px;
+  max-height: 120px;
+  width: 20vw;
+  height: 20vw;
+  border: 8px solid #FFE878;
+  color: #FFE878;
+  background: #fff9d6;
+  font-size: 40px;
+  transition: .15s all;
+  font-family: 'Orbitron', sans-serif;
+}
+
+#click:hover{
+  transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#click:active{
+  transform: scale(1);
+  box-shadow: none;
+}
+
+.upgrade{
+  margin-top: 15px;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  border-radius: 9px;
+  transition: .2s all;
+  font-family: 'Orbitron', sans-serif;
+}
+
+#saveNotification{
+  opacity: 0;
+  transition: 1s linear all;
+}
+
+.upgrade:hover{
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.upgrade:active{
+  box-shadow: none;
+}
+
+#menus{
+  position: absolute;
+	top: 5px;
+  right: 20px;
+  text-align: right;
+}
+
+.menubutton{
+  padding: 10px 15px 10px 15px;
+  border: 1px solid #000000;
+  background: transparent;
+  border-radius: 9px;
+  transition: .2s all;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 15px;
+}
+
+.menubutton:hover{
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.menubutton:active{
+  box-shadow: none;
+}
+
+#settingsButton{
+  position: fixed;
+  bottom: 7px;
+  right: 7px;
+  padding: 5px;
+  border: none;
+  background: transparent;
+  transition: 0.2s all;
+}
+
+#settingsButton:hover{
+  transform: rotate(45deg) scale(1.07);
+}
+
+#settings{
+  top: 25%;
+  visibility: hidden;
+  min-width: 35vw;
+  text-align: center;
+}
+
+input[type="checkbox"]{
+  margin-top: 10px;
+}
+
+#cryptoMenu, #hackMenu{
+  visibility: hidden;
+}
+
+#tradeOffers{
+  list-style-type: '';
+}
+
+#leaderboard{
+  position: absolute;
+	top: 0;
+  left: 20px;
+  max-height: 280px;
+}
+
+#leaderboardTitle{
+  margin-bottom: 10px;
+}
+
+ol{
+  margin: 0;
+}
+
+.place::marker{
+  font-family: 'Orbitron', sans-serif;
+}
+
+.place:nth-of-type(1){
+  color: #52d4ff;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.place:nth-of-type(2){
+  color: #FFD700;
+}
+
+.place:nth-of-type(3){
+  color: #cd7f32;
+}
+
+#chatBox{
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  align-text: left;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  max-width: 300px;
+  padding: 10px 10px 0px 10px;
+}
+
+#chat{
+  list-style-type: none;
+  padding: 0;
+  line-height: 15px;
+}
+
+#chat li {
+	max-width: 100%;
+}
+
+msg {
+	word-wrap: break-word;
+}
+
+#discordLink{
+  bottom: 10px;
+  right: 10px;
+  position: fixed;
+}
+
+#discordImg{
+  width: 35px;
+  height: 35px;
+  position: fixed;
+}
+/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+/* Animations */
+
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}

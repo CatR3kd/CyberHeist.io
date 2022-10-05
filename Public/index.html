@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberHeist.io</title>
+    <link rel="icon" href="/Assets/favicon.jpg" type="image/jpeg">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+		<link href="spinner.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="menuShadow">
+        <div id="settings" class="menu">
+          <button id="closeSettingsButton" class="closeMenuButton">x</button>
+          <h1>Settings</h1>
+          <hr>
+          <form id="settingsForm">
+            <span class="setting">
+              <input type="checkbox" id="freezeBG" name="freezeBG" value="freezeBG">
+              <label for="freezeBG">Freeze Background</label>
+            </span>
+            <br>
+            <span class="setting">
+              <input type="checkbox" id="fastLeaderBoardToggle" name="fastLeaderBoardToggle" value="fastLeaderBoardToggle" checked>
+              <label for="fastLeaderBoardToggle">Enable Fast Local Leaderboard</label>
+            </span>
+            <!--
+            <br>
+            <span class="setting">
+              <input type="checkbox" id="darkMode" name="darkMode" value="darkMode">
+              <label for="darkMode">Dark Mode</label>
+            </span>
+            -->
+          </form>
+        </div>
+        <div id="loginContainer" class="menu">
+					<center id="spinner" style="width: 100%; padding: 4em">
+						<div class="spinner"></div>
+            <p>Server down? <a href="https://cyberheistio.catr3kd.repl.co/Singleplayer/">Play singleplayer</a></p>
+					</center>
+          <div id="login">
+            <h2>Log in</h2>
+            <hr>
+            <label for="loginUsername">Username:</label>
+            <br>
+            <input type="text" id="loginUsername" class="userData"></input>
+            <br>
+            <label for="loginPassword">Password:</label>
+            <br>
+            <input type="password" id="loginPassword" class="userData"></input>
+            <br>
+            <button id="loginButton">Log in</button>
+            <p id="loginWarning" class="warning"></p>
+          </div>
+          <span id="divide" class="divider"></span>
+          <div id="signup">
+            <h2>Sign Up</h2>
+            <hr>
+            <label for="signupUsername">Username:</label>
+            <br>
+            <input type="text" id="signupUsername" class="userData"></input>
+            <br>
+            <label for="signupPassword">Password:</label>
+            <br>
+            <input type="password" id="signupPassword" class="userData"></input>
+            <br>
+            <label for="signupEmail">Email: <i>(Optional)</i></label>
+            <br>
+            <input type="text" id="signupEmail" class="userData"></input>
+            <br>
+            <button id="signupButton">Sign up</button>
+            <p id="signupWarning" class="warning"></p>
+          </div>
+        </div>
+        <div id="playSingleplayer">
+          <p><a href="https://cyberheistio.catr3kd.repl.co/Singleplayer/">Play singleplayer</a> | Join the <a href="https://discord.gg/ppPZX4D7Wf" target="_blank">Discord Server</a> | Game by <a href="https://catr3kd.repl.co" target="_blank">CatR3kd</a> | We are aware of the lag issues, and will be working on it in the next release.</p>
+        </div>
+        <div id="cryptoMenu" class="menu">
+          <h2>Crypto Market</h2>
+          <hr>
+          <p>Buy - $100</p>
+          <button id="localBuyButton">Buy</button>
+          <br>
+          <p>Sell - $85</p>
+          <button id="localBuyButton">Sell</button>
+          <hr>
+          <p>Or trade with other players:</p>
+          <br>
+          <ul id="tradeOffers">
+            <li>13 CRP - $500 <button>buy</button></li>
+            <li>13 CRP - $500 <button>buy</button></li>
+            <li>13 CRP - $500 <button>buy</button></li>
+            <li>13 CRP - $500 <button>buy</button></li>
+           </ul>
+        </div>
+        <div id="hackMenu" class="menu">
+          <button id="closeHack" class="closeMenuButton">x</button>
+          <h1>Hack Menu</h1>
+          <hr>
+          <h2>Hacking Terminal</h1>
+          <div id="hackTerminal">
+            <div id="guide">
+              <p>Type "<b>hack username</b>" to attempt to hack that user. <b>Note:</b> You can only attempt to hack once every 10 minutes!</p>
+              <p>Some players currently online:</p>
+              <ul id="playersOnline">
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+            <textarea id="terminal" placeholder="$>"></textarea>
+          </div>
+          <h2>Hacking Upgrades</h2>
+          <div id="hackUpgrades">
+            <button id="higherHackAmount" class="upgrade">More Efficient Hacks - $1,000,000</button>
+            <br>
+            <button id="betterFirewall" class="upgrade">Stronger Firewall - $1,000,000</button>
+            <br>
+            <button id="covertHacks" class="upgrade">Covert Hacks - $1,000,000</button>
+            <br>
+            <button id="doubleHacks" class="upgrade">Double Hacks - $10,000,000</button>
+          </div>
+        </div>
+        <div id="suspended" class="menu">
+          <h1>Uh oh...</h1>
+          <h2>You've been detected cheating or an admin has flagged you!</h2>
+          <p>Your account has been suspended. /:<br>You can still <a href="https://cyberheistio.catr3kd.repl.co/Singleplayer/">Play singleplayer</a></p>
+        </div>
+        <div id="hacked" class="menu">
+          <h1>WARNING!</h1>
+          <h3 id="timer">10:00</h3>
+          <p>Another user is hacking you! Enter the following code to reactivate your firewall and block the hack before you run out of time!</p>
+          <h2 id="code"></h2>
+          <input id="hackCode"></input>
+          <br>
+          <button id="submitHackCode">BLOCK</button>
+        </div>
+      </div>
+      <div id="gameContainer">
+        <div id="stats">
+          <h1 id="money">Money: $0</h1>
+          <h3 id="moneyPerClick" class="stats">Money per Click: $1</h3>
+          <h3 id="moneyPerSecond" class="stats">Money per Second: $0</h3>
+          <button id="click">$</button>
+          <p id="saveNotification"><i>Game Saved</i></p>
+        </div>
+        <div id="upgrades">
+          <button id="mpc" class="upgrade">Upgrade Money per Click - $50</button>
+          <br>
+          <button id="auto" class="upgrade">Buy Autoclicker - $200</button>
+          <br>
+          <button id="triple" class="upgrade">Buy Tripleclicker - $500</button>
+          <br>
+          <button id="superAuto" class="upgrade">Buy Superclicker - $10,000</button>
+          <br>
+          <button id="speed" class="upgrade">Double Clicker Speed - $500,000</button>
+          <br>
+          <button id="reset" class="upgrade">Reset All Prices - ALL (> $1,000,000)</button>
+        </div>
+      </div>
+      <br>
+      <div id="menus">
+        <br>
+        <button id="cryptoMarketButton" class="menubutton">Crypto Market - Coming Soon</button>
+        <br>
+        <button id="hackMenuButton" class="menubutton">Hack Menu</button>
+        <br>
+      </div>
+      <div id="leaderboard">
+        <h2 id="leaderboardTitle">Leaderboard:</h2>
+        <ol>
+          <li class="place"></li>
+          <li class="place"></li>
+          <li class="place"></li>
+          <li class="place"></li>
+          <li class="place"></li>
+          <li class="place"></li>
+          <li class="place"></li>
+          <li class="place"></li>
+          <li class="place"></li>
+          <li class="place"></li>
+        </ol>
+      </div>
+      <div id="chatBox">
+        <h3>Chat</h3>
+        <hr>
+        <ul id="chat">
+          <li><i>Welcome to the chat!</i></li>
+        </ul>
+        <input type="text" id="chatMessage" class="userData"></input>
+        <button id="chatButton">Send</button>
+        <!--
+        <span id="discordLink"><a title="Join our Discord community!" href="https://discord.gg/ppPZX4D7Wf" target="_blank"><img src="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://www.discord.com&size=128" id="discordImg"></img></a></span>
+        -->
+      </div>
+      <button id="settingsButton"><span class="material-symbols-outlined">settings</span></button>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "files": {
+    "Public/style.css": [
+      {
+        "id": "a0ae14bf-0cd5-462d-b1c2-cdbc2b59b959",
+        "line": 520,
+        "version": 1409,
+        "index": 9096
+      }
+    ],
+    "index.js": [
+      {
+        "id": "491442c2-ca8d-4cb1-8bb2-5e0f57a1c4cd",
+        "line": 871,
+        "version": 21037,
+        "index": 25370
+      },
+      {
+        "id": "2237a7ba-e8a6-4e93-ac89-b3317fba41ad",
+        "line": 871,
+        "version": 21037,
+        "index": 25370
+      },
+      {
+        "id": "6bee2063-7345-4ff4-bd90-5f0288c756f8",
+        "line": 871,
+        "version": 21037,
+        "index": 26124
+      }
+    ]
+  }
+}
