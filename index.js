@@ -10,7 +10,7 @@ const emailValidator = new EmailValidator();
 const Filter = require('bad-words');
 const filter = new Filter();
 const fs = require('fs');
-const Database = require('@replit/database');
+const { QuickDB } = require("quick.db");
 const { fetch } = require('undici');
 
 const connectedUsers = new Map();
@@ -26,19 +26,10 @@ var chatCounter = 0;
 
 
 // Create Database
-const db = new Database();
-
-// Check if the database is empty
-(async function() {
-	const keys = await db.list();
-  
-  if(keys.length <= 0){
-    console.log('The database is empty, you may need to create an empty user account.');
-  }
-})();
+const db = new QuickDB();
 
 async function getUsers(){
-  return await db.getAll();
+  return await db.all();
 }
 
 async function setUser(username, hash, email, gameStats, suspentionStatus){
@@ -63,12 +54,11 @@ async function setUser(username, hash, email, gameStats, suspentionStatus){
 
 const serverCheatDetection = true;
 const maximumAvgPerSecond = 40;
-const stolenThreshold = 1_000_000_000;
 
 
 // Client cheat detection settings
 
-const clientCheatDetection = true;
+const clientCheatDetection = false;
 const clientCheatDetectionSettings = {
   antiConsoleEnabled: true,
   autoClickerOptions: {
@@ -88,9 +78,6 @@ const clientCheatDetectionSettings = {
 
 // Permitions and roles
 
-const owners = [
-  'CatR3kd'
-];
 const moderators = [
   'CatR3kd',
   'Cosmic',
@@ -115,6 +102,10 @@ const minimumMessagesBeforeAutoMessage = 10;
 
 http.listen(8000, () => {
   console.log(`Up online at ${getFormattedDate()}`);
+});
+
+app.get('/Changelog',function(req,res) {
+  res.sendFile(path.join(__dirname + '/changelog.md'));
 });
 
 app.use(express.static(path.join(__dirname + '/Public')));
@@ -182,10 +173,6 @@ fullLeaderboardUpdate();
 
 
 io.on('connection', (socket) => {
-  // Emit leaderboard on connection
-  if(leaderboard.length > 0) socket.emit('leaderboardUpdate', leaderboard);
-  if(clientCheatDetection == true)  socket.emit('cheatDetectionSettings', clientCheatDetectionSettings);
-
   // Create account and login on signup
   socket.on('signUp', (user) => {
     createAccount(user.username, user.password, user.email).then(function (res) {
@@ -213,8 +200,10 @@ io.on('connection', (socket) => {
     // Check if user is already connected
     if(connectedUsers.has(user.username)){
       socket.emit('loggedIn', {error: true, message: 'User is already logged in!'});
-      return;
+      return socket.disconnect();
     }
+
+    socket.emit('leaderboardUpdate', leaderboard);
     
     login(user.username, user.password, socket).then(function (res) {
       if(res.error == false){
@@ -324,7 +313,6 @@ io.on('connection', (socket) => {
         message: 'Slow down!',
         badgeColor: 'red'
       }
-      console.log(rejRes)
       socket.emit('chat', chatObj);
     }
   });
@@ -362,14 +350,29 @@ function sendChat(username, message){
   if (filter.isProfane(message)) return;
 
   var badgeColor = '#000000';
+  var title = '';
 
   if(message.charAt(0) == '/') return doCommand(username, message);
 
-  if(moderators.includes(username)) badgeColor = '#5fbafc';
-  if(owners.includes(username)) badgeColor = '#54b382';
+  if(username == topTipper){
+    badgeColor = '#0fa7ff';
+    title += '[#1 Supporter] ';
+  } else if(tippers.includes(username)){
+    badgeColor = '#5b8dd9';
+    title += '[Supporter] ';
+  }
+
+  if(moderators.includes(username)){
+    badgeColor = '#5fbafc';
+    
+  }
+  if(username == 'CatR3kd'){
+    badgeColor = '#54b382';
+    title += '[Dev] ';
+  }
 
   const chatObj = {
-    sender: username,
+    sender: `${title}${username}`,
     message: filter.clean(message),
     badgeColor: badgeColor
   }
@@ -462,13 +465,15 @@ async function createAccount(username, password, email){
 
   Object.keys(users).forEach(function(key){
     const userObj = users[key];
-    
-    if((userObj.email == email) && (emailValidity == true)){
-      duplicateCheck = {error: true, message: 'Email is already in use!'};
-    }
 
-    if(userObj.username == username){
-      duplicateCheck = {error: true, message: 'Username is already in use!'};
+    if(userObj !== null){
+      if((userObj.email == email) && (emailValidity == true)){
+        duplicateCheck = {error: true, message: 'Email is already in use!'};
+      }
+  
+      if(userObj.username == username){
+        duplicateCheck = {error: true, message: 'Username is already in use!'};
+      } 
     }
   });
 
@@ -498,7 +503,7 @@ async function createAccount(username, password, email){
 
 async function login(username, password){
   const user = await db.get(username);
-
+  
   // Check if user exists
   if(!user) return({error: true, message: 'User does not exist!'});
 
@@ -587,7 +592,7 @@ async function updateUserData(userObj, socket){
   }
 }
 
-function checkUpdateValidity(newGameStats, oldGameStats, username){
+function checkUpdateValidity(newGameStats, oldGameStats){
   // Account for reuglar upgrades
   var autoSpent;
   var mpcSpent;
@@ -600,10 +605,10 @@ function checkUpdateValidity(newGameStats, oldGameStats, username){
     superAutoSpent = calculateSpent((newGameStats.superAuto.value - oldGameStats.superAuto.value), 10000, oldGameStats.superAuto.value, 1.145);
     tripleSpent = calculateSpent((newGameStats.triple.value - oldGameStats.triple.value), 500, oldGameStats.triple.value, 1.145);
   } else {
-    autoSpent = calculateSpent((newGameStats.auto.value - oldGameStats.auto.value), 200, 0, 1.145);
-    mpcSpent = calculateSpent((newGameStats.mpc.value - oldGameStats.mpc.value), 50, 0, 1.1);
-    superAutoSpent = calculateSpent((newGameStats.superAuto.value - oldGameStats.superAuto.value), 10000, 0, 1.145);
-    tripleSpent = calculateSpent((newGameStats.triple.value - oldGameStats.triple.value), 500, 0, 1.145);
+    autoSpent = calculateSpent(newGameStats.auto.value, 200, 0, 1.145);
+    mpcSpent = calculateSpent(newGameStats.mpc.value, 50, 0, 1.1);
+    superAutoSpent = calculateSpent(newGameStats.superAuto.value, 10000, 0, 1.145);
+    tripleSpent = calculateSpent(newGameStats.triple.value, 500, 0, 1.145);
   }
 
   var minimumSpent = autoSpent + mpcSpent + superAutoSpent + tripleSpent;
@@ -633,10 +638,10 @@ function checkUpdateValidity(newGameStats, oldGameStats, username){
   const maximumClicked = (newGameStats.mpc.amount * secondsBetweenUpdate * maximumAvgPerSecond);
   const maximumAuto = ((newGameStats.auto.amount + (newGameStats.triple.amount * 3) + (newGameStats.superAuto.amount * newGameStats.mpc.amount)) * secondsBetweenUpdate * newGameStats.speed.multiplier);
   
-  const maximumGenerated = maximumClicked + maximumAuto + moneyHacked;
+  const maximumGenerated = maximumClicked + maximumAuto;
   const totalMax = oldGameStats.money + (maximumGenerated - minimumSpent);
 
-  const cheatingDetected = (newGameStats.money > (totalMax)) && ((newGameStats.money - totalMax) >= stolenThreshold);
+  const cheatingDetected = (newGameStats.money > (totalMax));
 
   const returnObj = {
     cheating: cheatingDetected,
@@ -645,7 +650,6 @@ function checkUpdateValidity(newGameStats, oldGameStats, username){
       maximumGenerated: maximumGenerated,
       maximumClicked: maximumClicked,
       maximumAuto: maximumAuto,
-      moneyHacked: moneyHacked,
       minimumSpent: minimumSpent,
       autoSpent: autoSpent,
       mpcSpent: mpcSpent,
@@ -758,44 +762,29 @@ async function hackPlayer(hackObj, user, victim, socket){
 
 
 async function fullLeaderboardUpdate(){
-  var users = await getUsers();
-  var topUsers = [];
-  
-  Object.keys(users).forEach(function(key){
-    const user = users[key];
-    const userObj = {
-      username: user.username,
-      money: (user.gameStats || defaultGameStats).money
-    }
-    
-    if(user.suspentionStatus.suspended === false){
-      if(topUsers.length < 10){
-        topUsers.push(userObj);
-        topUsers.sort(function(a, b) {
-          return(b.money - a.money);
-        });
-      } else if((user.gameStats || defaultGameStats).money > topUsers[9].money){
-        topUsers[9] = userObj;
-        topUsers.sort(function(a, b) {
-          return(b.money - a.money);
-        });
-      }
-    }
+  const all = await db.all();
+  all.sort(function (a, b) {
+    return b.value.gameStats.money - a.value.gameStats.money;
   });
-
-  for(let user of topUsers){
-    if(connectedUsers.has(user.username)){
-      // User is online
-    }
-  }
   
-  leaderboard = topUsers;
+  const topTen = all.slice(0, 10);
+  let leaderboard = [];
+
+  for(let user of topTen){
+    const userObj = {
+      username: user.value.username,
+      money: user.value.gameStats.money
+    }
+
+    leaderboard.push(userObj);
+  }
+
   io.emit('leaderboardUpdate', leaderboard);
 }
 
 setInterval(function(){
   fullLeaderboardUpdate();
-}, 30000);
+}, 5000);
 
 
 
@@ -842,30 +831,25 @@ function formatNumber(number){
 
 
 
-// DISCORD WEBHOOK
+// REPLIT TIP SYSTEM
 
+let tippers = [];
+let topTipper = '';
 
+async function updateTips(){
+  await fetch('https://catr3kd-tip-api.catr3kd.repl.co/all?replId=e18389d9-cf4f-4d67-adb2-f0cc759a4097', {method: 'GET'})
+  .then(r => r.json().then(res => {
+  	tippers = (res.users || []);
+  })).catch((error) => {
+    console.error(error);
+  });
+  await fetch('https://catr3kd-tip-api.catr3kd.repl.co/top?replId=e18389d9-cf4f-4d67-adb2-f0cc759a4097', {method: 'GET'})
+  .then(r => r.json().then(res => {
+  	topTipper = (res.topTipper || '');
+  })).catch((error) => {
+    console.error(error);
+  });
+}
 
-process.on('unhandledRejection', (e) => {
-  fetch(process.env.WEBHOOK, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      "content": null,
-      "embeds": [
-        {
-          "title": "Bug report",
-          "description": "Oh no! A bug has ocurred on the stable branch ([https://cyberheistio-dev.catr3kd.repl.co/](https://cyberheistio-dev.catr3kd.repl.co/)) which has caused a fatal issue. The bug has been detailed below.\n\n\`\`\`js\n" + e.stack + "\n\`\`\`\n" + getFormattedDate(),
-          "color": null,
-          "author": {
-            "name": "CyberHeist.IO Server",
-            "icon_url": "https://cyberheistio.catr3kd.repl.co/Assets/favicon.jpg"
-          }
-        }
-      ],
-      "attachments": []
-    })
-  })
-})
+updateTips();
+setInterval(updateTips, 10_000);

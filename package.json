@@ -8,19 +8,19 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "dependencies": {
-    "@replit/database": "^2.0.2",
     "bad-words": "^3.0.4",
     "bcrypt": "^5.0.1",
+    "better-sqlite3": "^8.0.1",
     "email-deep-validator": "^3.3.0",
     "express": "^4.18.1",
     "fs": "^0.0.1-security",
     "http": "^0.0.1-security",
     "path": "^0.12.7",
+    "quick.db": "^9.0.8",
     "rate-limiter-flexible": "^2.3.11",
     "socket.io": "^4.5.2",
-    "sqreen": "^2.0.1",
     "undici": "^5.10.0"
   }
 }

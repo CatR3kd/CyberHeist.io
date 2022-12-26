@@ -17,7 +17,7 @@
   // Socket Events
   
   socket.on('disconnect', function(){
-    window.location.reload();
+    //window.location.reload();
   });
 
   socket.on('kick', function(){
@@ -26,7 +26,7 @@
   
   socket.on('loggedIn', function (res){
 		hideLoader();
-    
+    console.log(res)
     if(res.error == true){
       document.getElementById('loginWarning').innerText = res.message;
       if(res.message == 'User is suspended!'){
@@ -175,7 +175,7 @@
   var speed;
   var reset;
   var otherUpgrades;
-  var leaderboard;
+  var leaderboard = [];
   var hackCode;
 	
   function click(){
@@ -332,6 +332,8 @@
   // Leaderboard
   
   function updateLeaderboard(){
+    if(!isIterable(leaderboard)) return;
+    
     const places = document.getElementById('leaderboard').getElementsByTagName('li');
     
     for(let place in places){
@@ -340,6 +342,14 @@
         places[place].innerText = `${player.username}: $${formatNumber(player.money)}`;
       }
     }
+  }
+
+  function isIterable(input) {  
+    if (input === null || input === undefined) {
+      return false
+    }
+  
+    return typeof input[Symbol.iterator] === 'function'
   }
 
   function localLeaderboardUpdate(){
@@ -369,7 +379,6 @@
 
   function newChat(msgObj){
     const sender = msgObj.sender;
-    const message = msgObj.msg;
     const badgeColor = msgObj.badgeColor;
     
     const messages = document.getElementById('chat').children;
@@ -489,13 +498,6 @@
       document.getElementById('signupWarning').innerText = signup();
     }
   });
-
-  document.getElementById('signupEmail').addEventListener('keyup', function(event) {
-    if(event.keyCode === 13){
-      event.preventDefault();
-      document.getElementById('signupWarning').innerText = signup();
-    }
-  });
   
   document.getElementById('click').addEventListener('click', function(event) {
     // Make sure clicks are human
@@ -604,7 +606,7 @@
     const userObj = {
       'username': document.getElementById('signupUsername').value,
       'password': document.getElementById('signupPassword').value,
-      'email': document.getElementById('signupEmail').value
+      'email': ''
     };
     
     if(userObj.username.length > 15){
@@ -623,11 +625,13 @@
   }
   
   function login(){
-		showLoader()
+		showLoader();
     const userObj = {
       'username': document.getElementById('loginUsername').value,
       'password': document.getElementById('loginPassword').value
     };
+
+    if(!userObj.username || !userObj.password) return;
     socket.emit('login', userObj);
   }
   

@@ -331,7 +331,7 @@ hr{
   border: none;
   background: transparent;
   border-radius: 9px;
-  transition: .2s all;
+  transition: box-shadow .2s;
   font-family: 'Orbitron', sans-serif;
 }
 
