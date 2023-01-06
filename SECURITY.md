@@ -6,4 +6,4 @@ Reported security vulnerabilities are accepted and appreciated on all public rel
 
 ## Reporting a Vulnerability
 
-To report a vulnerability, please dm \_Ollie#4505 on [Discord](https://discord.com/channels/@me).
+To report a vulnerability, please do so in the [Discord](https://discord.gg/ppPZX4D7Wf).
