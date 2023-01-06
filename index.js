@@ -5,8 +5,6 @@ const io = require('socket.io')(http);
 const { RateLimiterMemory } = require('rate-limiter-flexible');
 const path = require('path');
 const bcrypt = require('bcrypt');
-const EmailValidator = require('email-deep-validator');
-const emailValidator = new EmailValidator();
 const Filter = require('bad-words');
 const filter = new Filter();
 const fs = require('fs');
@@ -32,11 +30,10 @@ async function getUsers(){
   return await db.all();
 }
 
-async function setUser(username, hash, email, gameStats, suspentionStatus){
+async function setUser(username, hash, gameStats, suspentionStatus){
   const userObj = {
     username: username,
     password: hash,
-    email: email,
     gameStats: gameStats,
     suspentionStatus: suspentionStatus
   }
@@ -90,7 +87,7 @@ const moderators = [
 // Automatic message
 
 const autoMessage = true;
-const autoMessageTxt = 'Thanks for playing CyberHeist! Be sure to give it a like if you enjoy it. If you need anything, check the Discord server: https://discord.gg/ppPZX4D7Wf';
+const autoMessageTxt = 'Thanks for playing! Be sure to give it a like if you enjoy it. People who tip the repl are awarded an exclusive chat role (; Discord - https://discord.gg/ppPZX4D7Wf';
 const autoMessageInterval = 10 * 60 * 1000;
 const minimumMessagesBeforeAutoMessage = 10;
 
@@ -175,7 +172,7 @@ fullLeaderboardUpdate();
 io.on('connection', (socket) => {
   // Create account and login on signup
   socket.on('signUp', (user) => {
-    createAccount(user.username, user.password, user.email).then(function (res) {
+    createAccount(user.username, user.password).then(function (res) {
       if(res.error == false){
         const userObj = {
           username: res.message.username,
@@ -439,7 +436,7 @@ const defaultGameStats = {
 
 
 
-async function createAccount(username, password, email){
+async function createAccount(username, password){
   // Check account details
   if(username.length > 15) return({error: true, message: 'Username too long!'});
   
@@ -457,20 +454,14 @@ async function createAccount(username, password, email){
   
   if((!username) || (!password)) return({error: true, message: 'Username and password cannot be empty!'});
 
-  // Check for duplicate emails and usernames
+  // Check for duplicate usernames
   const users = await getUsers();
   var duplicateCheck = {error: false, message: ''};
-  
-  const emailValidity = await validateEmail(email);
 
   Object.keys(users).forEach(function(key){
     const userObj = users[key];
 
     if(userObj !== null){
-      if((userObj.email == email) && (emailValidity == true)){
-        duplicateCheck = {error: true, message: 'Email is already in use!'};
-      }
-  
       if(userObj.username == username){
         duplicateCheck = {error: true, message: 'Username is already in use!'};
       } 
@@ -489,15 +480,8 @@ async function createAccount(username, password, email){
     reason: ''
   }
 
-  // Set email
-  var emailToUse = '';
-
-  if(emailValidity == true){
-    emailToUse = email;
-  }
-
   // Create user and login
-  await setUser(username, hash, email, defaultGameStats, suspentionStatus);
+  await setUser(username, hash, defaultGameStats, suspentionStatus);
   return(await login(username, password));
 }
 
@@ -548,7 +532,7 @@ async function modifyAccountSuspention(username, suspended, reason){
   }
 
   // Apply it to the user
-  setUser(userObj.username, userObj.password, userObj.email, userObj.gameStats, newSuspentionStatus);
+  setUser(userObj.username, userObj.password, userObj.gameStats, newSuspentionStatus);
 
   // Log the action
   logModeration(`User ${userObj.username}: ${reason}`);
@@ -574,7 +558,7 @@ async function updateUserData(userObj, socket){
 
     if(userObj.oldStats !== user.gameStats){
       socket.emit('updatedStats', user.gameStats)
-      await setUser(user.username, user.password, user.email, user.gameStats, user.suspentionStatus);
+      await setUser(user.username, user.password, user.gameStats, user.suspentionStatus);
     }
 
     const validityCheck = checkUpdateValidity(userObj.gameStats, user.gameStats, userObj.username);
@@ -587,7 +571,7 @@ async function updateUserData(userObj, socket){
       socket.emit('suspended');
     } else {
       socket.emit('updatedStats', newGameStats);
-      await setUser(user.username, user.password, user.email, newGameStats, user.suspentionStatus);
+      await setUser(user.username, user.password, newGameStats, user.suspentionStatus);
     }
   }
 }
@@ -791,15 +775,6 @@ setInterval(function(){
 // MISC. FUNCTIONS
 
 
-
-async function validateEmail(email){
-  const {wellFormed, validDomain, validMailbox} = await emailValidator.verify(email);
-  if((wellFormed === true) && (validDomain === true)){
-    return(true);
-  } else {
-    return(false);
-  }
-}
 
 function getFormattedDate() {
   var date = new Date();

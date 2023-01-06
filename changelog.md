@@ -16,7 +16,9 @@ This is the final planned changelog for CH. More may come, but it's pretty unlik
 - Updated the text at the bottom of the login page for more info
 - Added a readable changelog (this) in the site (just markdown in browser lol)
 - Removed the crypto menu button because it's never coming ):
+- Removed everything email related because it was useless
+- Changed automessage
 
-NOTE: This project is unlicensed, meaning you can't do anything to it without my permission. I won't pursue you for just forking the repl and playing with your friends, but if you try to make money using my code and/or game, I'll be there.
+NOTE: This project is unlicensed, meaning you can't do anything to it without my permission. I won't pursue you for just forking the repl and playing with your friends, but if you try to make money using my game and/or code, I'll be there.
 
-2022 [CatR3kd](https://catr3kd.repl.co)
+2023 [CatR3kd](https://catr3kd.repl.co)

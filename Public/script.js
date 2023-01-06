@@ -605,8 +605,7 @@
 		showLoader()
     const userObj = {
       'username': document.getElementById('signupUsername').value,
-      'password': document.getElementById('signupPassword').value,
-      'email': ''
+      'password': document.getElementById('signupPassword').value
     };
     
     if(userObj.username.length > 15){
