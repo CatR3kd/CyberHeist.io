@@ -18,6 +18,7 @@ This is the final planned changelog for CH. More may come, but it's pretty unlik
 - Removed the crypto menu button because it's never coming ):
 - Removed everything email related because it was useless
 - Changed automessage
+- Fixed a bug regarding save failure
 
 NOTE: This project is unlicensed, meaning you can't do anything to it without my permission. I won't pursue you for just forking the repl and playing with your friends, but if you try to make money using my game and/or code, I'll be there.
 

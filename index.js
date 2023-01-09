@@ -576,7 +576,7 @@ async function updateUserData(userObj, socket){
   }
 }
 
-function checkUpdateValidity(newGameStats, oldGameStats){
+function checkUpdateValidity(newGameStats, oldGameStats, username){
   // Account for reuglar upgrades
   var autoSpent;
   var mpcSpent;

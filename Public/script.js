@@ -545,10 +545,6 @@
   document.getElementById('doubleHacks').addEventListener('click', function() {
     buyDoubleHacks();
   });
-  document.getElementById('cryptoMarketButton').addEventListener('click', function() {
-    // No crypto yet (;
-    //openCrypto();
-  });
   
   document.getElementById('hackMenuButton').addEventListener('click', function() {
     openHack();
@@ -736,14 +732,6 @@
     if(menusOpen <= 1) document.getElementById('menuShadow').style.visibility = 'hidden';
     document.getElementById('hacked').style.visibility = 'hidden'; 
     menusOpen--;
-  }
-  
-  // Crypto Market
-  
-  function openCrypto(){
-    document.getElementById('menuShadow').style.visibility = 'visible';
-    document.getElementById('cryptoMenu').style.visibility = 'visible';
-    menusOpen++;
   }
 
   // Anticheat
