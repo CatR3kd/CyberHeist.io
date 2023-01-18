@@ -276,3 +276,608 @@ Autoclicker spent: 0
 Superclicker spent: 0
 Triple spent: 0
 2022-10-6 1:51:50 User andrew: Was suspended by a moderator
+2023-1-9 18:11:5 pizzaboy: Detected attempting to cheat $2736 worth of assets.
+Maximum generated: 23940
+Maximum clicked: 22800
+Maximum auto'ed: 1140
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 18:11:5 User pizzaboy: Detected attempting to cheat $2736 worth of assets.
+Maximum generated: 23940
+Maximum clicked: 22800
+Maximum auto'ed: 1140
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 18:43:54 HIMOTHy: Detected attempting to cheat $5976 worth of assets.
+Maximum generated: 2010
+Maximum clicked: 1200
+Maximum auto'ed: 810
+Money hacked: undefined
+Minimum spent: 7179
+MPC spent: 0
+Autoclicker spent: 1729
+Superclicker spent: 0
+Triple spent: 5450
+2023-1-9 18:43:54 User HIMOTHy: Detected attempting to cheat $5976 worth of assets.
+Maximum generated: 2010
+Maximum clicked: 1200
+Maximum auto'ed: 810
+Money hacked: undefined
+Minimum spent: 7179
+MPC spent: 0
+Autoclicker spent: 1729
+Superclicker spent: 0
+Triple spent: 5450
+2023-1-9 18:57:25 fsefsfe: Detected attempting to cheat $21676 worth of assets.
+Maximum generated: 60000
+Maximum clicked: 60000
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 52861
+MPC spent: 52861
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 18:57:25 User fsefsfe: Detected attempting to cheat $21676 worth of assets.
+Maximum generated: 60000
+Maximum clicked: 60000
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 52861
+MPC spent: 52861
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:0:9 ezzzzzzzzz: Detected attempting to cheat $2486 worth of assets.
+Maximum generated: 65340
+Maximum clicked: 63600
+Maximum auto'ed: 1740
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:0:9 User ezzzzzzzzz: Detected attempting to cheat $2486 worth of assets.
+Maximum generated: 65340
+Maximum clicked: 63600
+Maximum auto'ed: 1740
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:6:25 yourmom: Detected attempting to cheat $13686 worth of assets.
+Maximum generated: 1200
+Maximum clicked: 1200
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:6:25 User yourmom: Detected attempting to cheat $13686 worth of assets.
+Maximum generated: 1200
+Maximum clicked: 1200
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:9:1 egg: Detected attempting to cheat $7206 worth of assets.
+Maximum generated: 11940
+Maximum clicked: 10800
+Maximum auto'ed: 1140
+Money hacked: undefined
+Minimum spent: 18853
+MPC spent: 407
+Autoclicker spent: 229
+Superclicker spent: 10000
+Triple spent: 8217
+2023-1-9 19:9:1 User egg: Detected attempting to cheat $7206 worth of assets.
+Maximum generated: 11940
+Maximum clicked: 10800
+Maximum auto'ed: 1140
+Money hacked: undefined
+Minimum spent: 18853
+MPC spent: 407
+Autoclicker spent: 229
+Superclicker spent: 10000
+Triple spent: 8217
+2023-1-9 19:17:50 n0ob4Dayz: Detected attempting to cheat $374 worth of assets.
+Maximum generated: 1410
+Maximum clicked: 1200
+Maximum auto'ed: 210
+Money hacked: undefined
+Minimum spent: 1273
+MPC spent: 0
+Autoclicker spent: 200
+Superclicker spent: 0
+Triple spent: 1073
+2023-1-9 19:17:50 User n0ob4Dayz: Detected attempting to cheat $374 worth of assets.
+Maximum generated: 1410
+Maximum clicked: 1200
+Maximum auto'ed: 210
+Money hacked: undefined
+Minimum spent: 1273
+MPC spent: 0
+Autoclicker spent: 200
+Superclicker spent: 0
+Triple spent: 1073
+2023-1-9 19:20:9 higgins656: Detected attempting to cheat $1728 worth of assets.
+Maximum generated: 2430
+Maximum clicked: 2400
+Maximum auto'ed: 30
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:20:9 User higgins656: Detected attempting to cheat $1728 worth of assets.
+Maximum generated: 2430
+Maximum clicked: 2400
+Maximum auto'ed: 30
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:23:27 iiELementalSky: Detected attempting to cheat $2876 worth of assets.
+Maximum generated: 1200
+Maximum clicked: 1200
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:23:27 User iiELementalSky: Detected attempting to cheat $2876 worth of assets.
+Maximum generated: 1200
+Maximum clicked: 1200
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:37:41 m0nstr894: Detected attempting to cheat $392 worth of assets.
+Maximum generated: 2580
+Maximum clicked: 2400
+Maximum auto'ed: 180
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:37:41 User m0nstr894: Detected attempting to cheat $392 worth of assets.
+Maximum generated: 2580
+Maximum clicked: 2400
+Maximum auto'ed: 180
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:39:36 DripBlack: Detected attempting to cheat $7711 worth of assets.
+Maximum generated: 2400
+Maximum clicked: 2400
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:39:36 User DripBlack: Detected attempting to cheat $7711 worth of assets.
+Maximum generated: 2400
+Maximum clicked: 2400
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:42:3 NotCheating: Detected attempting to cheat $12093 worth of assets.
+Maximum generated: 1200
+Maximum clicked: 1200
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:42:3 User NotCheating: Detected attempting to cheat $12093 worth of assets.
+Maximum generated: 1200
+Maximum clicked: 1200
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:45:49 seb: Detected attempting to cheat $11479 worth of assets.
+Maximum generated: 49500
+Maximum clicked: 42000
+Maximum auto'ed: 7500
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:45:49 User seb: Detected attempting to cheat $11479 worth of assets.
+Maximum generated: 49500
+Maximum clicked: 42000
+Maximum auto'ed: 7500
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:47:14 2skiAlt: Detected attempting to cheat $3175 worth of assets.
+Maximum generated: 1200
+Maximum clicked: 1200
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:47:14 User 2skiAlt: Detected attempting to cheat $3175 worth of assets.
+Maximum generated: 1200
+Maximum clicked: 1200
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:47:43 2ski3: Detected attempting to cheat $3200 worth of assets.
+Maximum generated: 1200
+Maximum clicked: 1200
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:47:43 User 2ski3: Detected attempting to cheat $3200 worth of assets.
+Maximum generated: 1200
+Maximum clicked: 1200
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:48:19 2ski4: Detected attempting to cheat $2997 worth of assets.
+Maximum generated: 1200
+Maximum clicked: 1200
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:48:19 User 2ski4: Detected attempting to cheat $2997 worth of assets.
+Maximum generated: 1200
+Maximum clicked: 1200
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:48:45 2ski5: Detected attempting to cheat $3125 worth of assets.
+Maximum generated: 1200
+Maximum clicked: 1200
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:48:45 User 2ski5: Detected attempting to cheat $3125 worth of assets.
+Maximum generated: 1200
+Maximum clicked: 1200
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:55:8 wsaao: Detected attempting to cheat $4830 worth of assets.
+Maximum generated: 1470
+Maximum clicked: 1200
+Maximum auto'ed: 270
+Money hacked: undefined
+Minimum spent: 1729
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 1729
+2023-1-9 19:55:8 User wsaao: Detected attempting to cheat $4830 worth of assets.
+Maximum generated: 1470
+Maximum clicked: 1200
+Maximum auto'ed: 270
+Money hacked: undefined
+Minimum spent: 1729
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 1729
+2023-1-9 19:59:38 LaunderEZ909n: Detected attempting to cheat $6303 worth of assets.
+Maximum generated: 1380
+Maximum clicked: 1200
+Maximum auto'ed: 180
+Money hacked: undefined
+Minimum spent: 1729
+MPC spent: 0
+Autoclicker spent: 1729
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 19:59:38 User LaunderEZ909n: Detected attempting to cheat $6303 worth of assets.
+Maximum generated: 1380
+Maximum clicked: 1200
+Maximum auto'ed: 180
+Money hacked: undefined
+Minimum spent: 1729
+MPC spent: 0
+Autoclicker spent: 1729
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 20:51:52 2ski: Detected attempting to cheat $3474 worth of assets.
+Maximum generated: 70410
+Maximum clicked: 63600
+Maximum auto'ed: 6810
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 20:51:52 User 2ski: Detected attempting to cheat $3474 worth of assets.
+Maximum generated: 70410
+Maximum clicked: 63600
+Maximum auto'ed: 6810
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 20:55:41 User 2ski: Was suspended by a moderator
+2023-1-9 20:55:55 wowsers: Detected attempting to cheat $20416 worth of assets.
+Maximum generated: 1200
+Maximum clicked: 1200
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 20:55:55 User wowsers: Detected attempting to cheat $20416 worth of assets.
+Maximum generated: 1200
+Maximum clicked: 1200
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 20:56:1 User 2ski: Was suspended by a moderator
+2023-1-9 20:57:42 sus: Detected attempting to cheat $11039 worth of assets.
+Maximum generated: 1200
+Maximum clicked: 1200
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 20:57:42 User sus: Detected attempting to cheat $11039 worth of assets.
+Maximum generated: 1200
+Maximum clicked: 1200
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 21:6:16 wasd: Detected attempting to cheat $542217 worth of assets.
+Maximum generated: 457260
+Maximum clicked: 153600
+Maximum auto'ed: 303660
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 21:6:16 User wasd: Detected attempting to cheat $542217 worth of assets.
+Maximum generated: 457260
+Maximum clicked: 153600
+Maximum auto'ed: 303660
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 21:7:19 bfdiisgreat: Detected attempting to cheat $1060651 worth of assets.
+Maximum generated: 437040
+Maximum clicked: 162000
+Maximum auto'ed: 275040
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 21:7:19 User bfdiisgreat: Detected attempting to cheat $1060651 worth of assets.
+Maximum generated: 437040
+Maximum clicked: 162000
+Maximum auto'ed: 275040
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 21:13:16 banana: Detected attempting to cheat $715155 worth of assets.
+Maximum generated: 56820
+Maximum clicked: 55200
+Maximum auto'ed: 1620
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 21:13:16 User banana: Detected attempting to cheat $715155 worth of assets.
+Maximum generated: 56820
+Maximum clicked: 55200
+Maximum auto'ed: 1620
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 21:14:10 Nayak39: Detected attempting to cheat $303891 worth of assets.
+Maximum generated: 44700
+Maximum clicked: 28800
+Maximum auto'ed: 15900
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 21:14:10 User Nayak39: Detected attempting to cheat $303891 worth of assets.
+Maximum generated: 44700
+Maximum clicked: 28800
+Maximum auto'ed: 15900
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 21:28:3 NotJustHim: Detected attempting to cheat $10654 worth of assets.
+Maximum generated: 16170
+Maximum clicked: 15600
+Maximum auto'ed: 570
+Money hacked: undefined
+Minimum spent: 10000
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 10000
+Triple spent: 0
+2023-1-9 21:28:3 User NotJustHim: Detected attempting to cheat $10654 worth of assets.
+Maximum generated: 16170
+Maximum clicked: 15600
+Maximum auto'ed: 570
+Money hacked: undefined
+Minimum spent: 10000
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 10000
+Triple spent: 0
+2023-1-9 21:31:38 dodrugskids: Detected attempting to cheat $2424 worth of assets.
+Maximum generated: 1560
+Maximum clicked: 1200
+Maximum auto'ed: 360
+Money hacked: undefined
+Minimum spent: 3787
+MPC spent: 0
+Autoclicker spent: 3287
+Superclicker spent: 0
+Triple spent: 500
+2023-1-9 21:31:38 User dodrugskids: Detected attempting to cheat $2424 worth of assets.
+Maximum generated: 1560
+Maximum clicked: 1200
+Maximum auto'ed: 360
+Money hacked: undefined
+Minimum spent: 3787
+MPC spent: 0
+Autoclicker spent: 3287
+Superclicker spent: 0
+Triple spent: 500
+2023-1-9 21:34:36 banana: Detected attempting to cheat $22919 worth of assets.
+Maximum generated: 172980
+Maximum clicked: 93600
+Maximum auto'ed: 79380
+Money hacked: undefined
+Minimum spent: 383271
+MPC spent: 0
+Autoclicker spent: 41345
+Superclicker spent: 334787
+Triple spent: 7139
+2023-1-9 21:34:36 User banana: Detected attempting to cheat $22919 worth of assets.
+Maximum generated: 172980
+Maximum clicked: 93600
+Maximum auto'ed: 79380
+Money hacked: undefined
+Minimum spent: 383271
+MPC spent: 0
+Autoclicker spent: 41345
+Superclicker spent: 334787
+Triple spent: 7139
+2023-1-9 21:34:42 Dodrugskids: Detected attempting to cheat $2749 worth of assets.
+Maximum generated: 1200
+Maximum clicked: 1200
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 21:34:42 User Dodrugskids: Detected attempting to cheat $2749 worth of assets.
+Maximum generated: 1200
+Maximum clicked: 1200
+Maximum auto'ed: 0
+Money hacked: undefined
+Minimum spent: 0
+MPC spent: 0
+Autoclicker spent: 0
+Superclicker spent: 0
+Triple spent: 0
+2023-1-9 21:36:41 User Justhim: 
+2023-1-9 21:36:41 User bfdiisgreat: 
+2023-1-10 2:41:7 User Justhim: 

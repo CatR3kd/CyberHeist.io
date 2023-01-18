@@ -18,7 +18,6 @@ var playersOnline = [];
 var chatCounter = 0;
 
 
-
 // DATABASE
 
 
@@ -43,13 +42,14 @@ async function setUser(username, hash, gameStats, suspentionStatus){
 
 
 
+
 // SETTINGS
 
 
 
 // Server cheat detection settings
 
-const serverCheatDetection = true;
+const serverCheatDetection = false;
 const maximumAvgPerSecond = 40;
 
 
@@ -76,11 +76,7 @@ const clientCheatDetectionSettings = {
 // Permitions and roles
 
 const moderators = [
-  'CatR3kd',
-  'Cosmic',
-  'haroon',
-  'Conspicuous',
-  'Jake'
+  'CatR3kd'
 ];
 
 
@@ -455,20 +451,8 @@ async function createAccount(username, password){
   if((!username) || (!password)) return({error: true, message: 'Username and password cannot be empty!'});
 
   // Check for duplicate usernames
-  const users = await getUsers();
-  var duplicateCheck = {error: false, message: ''};
-
-  Object.keys(users).forEach(function(key){
-    const userObj = users[key];
-
-    if(userObj !== null){
-      if(userObj.username == username){
-        duplicateCheck = {error: true, message: 'Username is already in use!'};
-      } 
-    }
-  });
-
-  if(duplicateCheck.error == true) return duplicateCheck;
+  const existing = await db.get(username);
+  if(existing != undefined) return {error: true, message: 'Username is already in use!'};
   
   // Generate hash
   const salt = await bcrypt.genSaltSync(3);
@@ -555,15 +539,13 @@ async function updateUserData(userObj, socket){
   const newGameStats = userObj.gameStats;
   
   if(user && user.password && (validateUserWithSocket(userObj.username, socket.id))){
-
-    if(userObj.oldStats !== user.gameStats){
-      socket.emit('updatedStats', user.gameStats)
-      await setUser(user.username, user.password, user.gameStats, user.suspentionStatus);
-    }
+  
+    socket.emit('updatedStats', user.gameStats)
+    await setUser(user.username, user.password, user.gameStats, user.suspentionStatus);
 
     const validityCheck = checkUpdateValidity(userObj.gameStats, user.gameStats, userObj.username);
     
-    if((validityCheck.cheating === true) && (serverCheatDetection === true)){
+    if((serverCheatDetection === true) && (validityCheck.cheating === true)){
       const message = `Detected attempting to cheat $${validityCheck.details.margin} worth of assets.\nMaximum generated: ${validityCheck.details.maximumGenerated}\nMaximum clicked: ${validityCheck.details.maximumClicked}\nMaximum auto'ed: ${validityCheck.details.maximumAuto}\nMoney hacked: ${validityCheck.details.moneyHacked}\nMinimum spent: ${validityCheck.details.minimumSpent}\nMPC spent: ${validityCheck.details.mpcSpent}\nAutoclicker spent: ${validityCheck.details.autoSpent}\nSuperclicker spent: ${validityCheck.details.superAutoSpent}\nTriple spent: ${validityCheck.details.tripleSpent}`;
 
       logModeration(`${userObj.username}: ${message}`);
